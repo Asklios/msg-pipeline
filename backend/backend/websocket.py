@@ -21,12 +21,17 @@ def connect(auth):
         ws_clients.append(request.sid)
         print(f'Client authenticated {request.sid}')
         print(f'{len(ws_clients)} clients connected')
+    else:
+        return False
 
 
 @socket.on('disconnect')
 def disconnect():
     global ws_clients
-    ws_clients.remove(request.sid)
+    try:
+        ws_clients.remove(request.sid)
+    except ValueError:
+        pass
     print('Client disconnected')
 
 
