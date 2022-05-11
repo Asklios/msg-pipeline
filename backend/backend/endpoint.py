@@ -21,6 +21,7 @@ event_message = api.model(
 event_delete = api.model(
     'EventDelete',
     {
+        "room": fields.String(required=True, description='A room ID'),
         "event_id": fields.String(required=True, description='Message event id')
     }
 )

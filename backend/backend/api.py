@@ -10,7 +10,7 @@ authorizations = {
 }
 
 
-api = Api(version='0.1', title='Messenger Helpdesk', description='API for forwarding messages from Whatsapp to Matrix',
+api = Api(version='1.0', title='MSG Pipeline', description='API for forwarding messages to a Websocket',
           url_scheme=settings.URL_SCHEME, authorizations=authorizations)
 
 
